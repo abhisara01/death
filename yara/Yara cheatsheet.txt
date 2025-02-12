@@ -1,0 +1,14 @@
+Yara Notes/CheatSheet
+
+To dissect PE using sample command
+
+import “pe”
+rule pe_mod { condition: pe.is_pe }
+
+Yara will dissect and provide a log of information. Including the masquerading.
+
+A dope of a YARA documentation: https://yara.readthedocs.io/en/stable/modules/pe.html
+
+Command to run YARA against sample is 
+
+$ yara example.yar sample.exe
