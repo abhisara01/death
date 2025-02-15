@@ -1,15 +1,15 @@
 Yara Notes/CheatSheet
 
-To dissect PE using sample command:
+- To dissect PE using sample command:
 
 import "pe"
 rule pe_mod { condition: pe.is_pe }
 
-Yara will dissect and provide a log of information, including the masquerading.
+- Yara will dissect and provide a log of information, including the masquerading.
 
-A dope of a YARA documentation: https://yara.readthedocs.io/en/stable/modules/pe.html
+Important : A dope of a YARA documentation: https://yara.readthedocs.io/en/stable/modules/pe.html
 
-Command to run YARA against a sample is:
+- Command to run YARA against a sample is:
 
 $ yara example.yar sample.exe
 
@@ -45,13 +45,13 @@ $ yara example.yar sample.exe
     - For example: `pe.number_of_sections == 3`
 
 
-Usageof Global rule and private rule
+- Usageof Global rule and private rule
 
-global rule example { condition: pe.is_pe }
+-- global rule example { condition: pe.is_pe }
 
-private rule example2 { string: $s1 = "mscoree" condition: $s1}
+-- private rule example2 { string: $s1 = "mscoree" condition: $s1}
 
-Running Yara generator
+- Running Yara generator
 
 $ python3 yarGen.py -m <path_to_directory> --excludegood -o <path_to_output>
 
